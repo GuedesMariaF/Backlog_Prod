@@ -117,7 +117,7 @@
 
 .intro-button {
   background: #ffffff;
-  color: #000000;
+  color: var(--color-black);
   border: none;
   padding: 20px 60px;
   border-radius: 50px;
@@ -175,13 +175,6 @@
   margin-bottom: 20px;
   font-weight: 50;
   text-align: center;
-}
-
-.screen p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  text-align: center;
-  color: #666;
 }
 
 
@@ -301,7 +294,10 @@
   }
   
   .screen {
-    padding: 20px 10px;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
   }
   
   .screen h1 {
@@ -323,15 +319,7 @@
   50% { border-color: white; }
 }
 
-#typing-text {
-  overflow: hidden; 
-  white-space: nowrap; 
-  border-right: 1px solid white; 
-  margin: 0 auto; 
-  animation: 
-    typing 5s steps(20, end),
-    blink-caret 0.75s step-end infinite;
-}
+
 
 
 

@@ -17,13 +17,14 @@
     display: block;
 }
 .question-title {
-    font-size: 34px;
-    color: white;
-    margin-bottom: 20px;
-    white-space: nowrap;
-    overflow: hidden;
-   
-  }
+  font-size: 34px;
+  color: white;
+  margin-bottom: 20px;
+
+  overflow: hidden;
+}
+
+
   
 
 .option {
@@ -94,4 +95,48 @@
     display: flex;
     gap: 10px;
   }
+  @media (max-width: 768px) {
+    .question-title {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .question-modal {
+      padding: 1.5rem;
+      width: 95%;
+    }
+    
+    .option {
+      padding: 0.8rem;
+    }
+  }
   
+  @media (max-width: 480px) {
+    .question-title {
+      font-size: 1.1rem;
+    }
+    
+    .question-modal {
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    
+    .option {
+      font-size: 0.9rem;
+      padding: 0.7rem;
+    }
+    
+    .answer {
+      font-size: 1.1rem;
+    }
+  }
+  
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .question-modal {
+    animation: fadeIn 0.5s ease-out;
+  }

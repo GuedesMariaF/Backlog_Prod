@@ -1,0 +1,25 @@
+#BACKLOG PROD - Plataforma Multimídia Interativa
+### Visão Geral
+Plataforma web para exibição de conteúdo multimídia com componentes interativos e questionário.
+
+### Tecnologias Utilizadas
+- HTML5
+- CSS3
+- JavaScript
+
+### Como Executar
+Clone o repositório
+```bash
+git clone https://github.com/seu-usuario/backlog_prod.git
+cd backlog_prod
+```
+Abra o arquivo index.html principal no navegador
+
+### Estilização
+CSS modularizado por componentes
+
+Estilos globais na pasta /css
+
+Estilos específicos em pages/home/components/
+
+
