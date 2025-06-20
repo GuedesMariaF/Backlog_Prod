@@ -1,0 +1,26 @@
+.video-wrapper {
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.video-player {
+    width: 100%;
+    
+    aspect-ratio: 16 / 9; 
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background-color: #000;
+}
+@media (max-width: 768px) {
+    .video-wrapper {
+        padding: 10px;
+        max-width: 95%; 
+    }
+    
+    .video-player {
+        border-radius: 8px;
+    }
+}

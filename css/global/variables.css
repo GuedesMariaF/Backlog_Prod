@@ -1,12 +1,9 @@
 :root{
     --color-white: #ffffff;
     --color-black: #000000;
-    --container-bg-color: #1a1a1a;
-    --container-bg-color-linear: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    --container-bg-color: #232222;
+    --container-bg-color-linear: #232222;
     --color-gray: #f0f0f0;
-    --f1: clamp(1.2rem, 2vw + 1rem, 2.4rem);
-    --f2: clamp(1.4rem, 2vw + 1.2rem, 2.8rem);
-    --f3: clamp(1.6rem, 2vw + 1.4rem, 3.2rem);
-
+   
 
 }

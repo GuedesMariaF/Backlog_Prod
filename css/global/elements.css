@@ -1,90 +1,329 @@
+.intro-screen {
 
-  .top-bar {
-    background: var(--container-bg-color); 
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 2rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  width: 100vw;
+ 
+  background: var( --container-bg-color-linear);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.top-bar {
+  background: var(--container-bg-color); 
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.top-bar__content {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.logo {
+  height: 50px;
+  object-fit: contain;
+}
+.screen {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.screen.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.intro-screen.hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.intro-logo {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.intro-content {
+  text-align: center;
+  color: #ffffff;
+  max-width: 800px;
+  padding: 0 40px;
+}
+
+.intro-title {
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  line-height: 1.2;
+}
+
+.intro-subtitle {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.intro-card {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 30px;
+  padding: 50px 60px;
+  margin: 40px auto;
+  max-width: 600px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.intro-brand {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.intro-tagline {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 50px;
+  color: #cccccc;
+  letter-spacing: 1px;
+}
+
+.intro-button {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 20px 60px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+}
+
+.intro-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
+  background: #f0f0f0;
+}
+
+.intro-button:active {
+  transform: translateY(-1px);
+}
+
+
+.main-content {
+  margin-top: 100px;
+  padding: 20px;
+  min-height: calc(100vh - 120px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.main-content.visible {
+  opacity: 1;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+.screen {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+  padding: 40px 20px;
+}
+
+.screen.active {
+  display: block;
+}
+
+.screen h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2a2a2a;
+  text-align: center;
+}
+
+.screen p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #666;
+}
+
+
+.content-box {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  margin: 30px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.content-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #2a2a2a;
+}
+
+.content-box p {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.content-box ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.content-box li {
+  margin-bottom: 8px;
+  color: #555;
+}
+@media (max-width: 1024px) {
+  .intro-title, .intro-subtitle {
+    font-size: 3rem;
   }
   
-  .top-bar__content {
-    width: 100%;
-    max-width: 1280px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  .intro-card {
+    padding: 60px 40px;
+    max-width: 500px;
+  }
+  
+  .intro-brand {
+    font-size: 2.5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .top-bar {
+    height: 60px;
+    padding: 0 1rem;
   }
   
   .logo {
-    height: 32px;
-    object-fit: contain;
+    height: 40px;
+  }
+  
+  .intro-title, .intro-subtitle {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .intro-card {
+    padding: 40px 20px;
+    margin: 20px auto;
+    border-radius: 20px;
+  }
+  
+  .intro-brand {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .intro-tagline {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .intro-button {
+    padding: 15px 40px;
+    font-size: 1rem;
   }
   
   .main-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 60px); 
-    background-color: var(--container-bg-color);
-    text-align: center;
+    margin-top: 80px;
   }
   
-  h1 {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
+  .content-box {
+    padding: 20px;
   }
   
-  h2 {
-    font-size: 4.5rem;
-    margin-top: 0;
-    font-weight: normal;
-    opacity: 0.8;
+  .screen h1 {
+    font-size: 2rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .intro-title, .intro-subtitle {
+    font-size: 1.5rem;
   }
   
-  .agency-name {
+  .intro-brand {
+    font-size: 1.8rem;
+  }
+  
+  .intro-tagline {
     font-size: 1rem;
-    margin-bottom: 1rem;
-    opacity: 0.7;
   }
   
-  .btn {
-    margin-top: 32px;
-    background-color: white;
-    color: black;
-    padding: 12px 48px;
-    font-weight: bold;
-    border: none;
-    border-radius: 999px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background 0.3s;
-    text-decoration: none;
+  .intro-content {
+    padding: 0 20px;
   }
   
-  .btn:hover {
-    background-color: #eaeaea;
-  }
-  .content-container {
-    background-color: var(--container-bg-color);
-    border-radius: 16px;
-    padding: 3rem;
-    text-align: center;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
-  .container-wrapper {
-    width: 60%;
-    margin: 0 auto;
-    border-radius: 20px;
-    padding: 20px 0;
+  .intro-logo {
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
   }
   
-  .container {
-    width: 100%;
-    border-radius: 20px;
-    display: block;
+  .screen {
+    padding: 20px 10px;
   }
+  
+  .screen h1 {
+    font-size: 1.8rem;
+  }
+  
+  .content-box h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+ 
