@@ -173,7 +173,7 @@
 .screen h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #2a2a2a;
+  font-weight: 50;
   text-align: center;
 }
 
@@ -210,10 +210,7 @@
   margin-bottom: 20px;
 }
 
-.content-box li {
-  margin-bottom: 8px;
-  color: #555;
-}
+
 @media (max-width: 1024px) {
   .intro-title, .intro-subtitle {
     font-size: 3rem;
@@ -314,6 +311,26 @@
   .content-box h2 {
     font-size: 1.5rem;
   }
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+#typing-text {
+  overflow: hidden; 
+  white-space: nowrap; 
+  border-right: 1px solid white; 
+  margin: 0 auto; 
+  animation: 
+    typing 5s steps(20, end),
+    blink-caret 0.75s step-end infinite;
 }
 
 

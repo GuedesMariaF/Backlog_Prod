@@ -58,7 +58,13 @@
     pointer-events: none;
     cursor: default;
 }
+.fullscreen-button {
+    display: none;
+}
 
+#screen-home.active ~ .navigation-bar .fullscreen-button {
+    display: flex;
+}
 .nav-button {
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -132,6 +138,23 @@
     }
     
 
-
+    @media (max-width: 400px) {
+        .nav-text {
+            display: none; 
+        }
+    
+        .nav-center {
+            padding: 8px;
+            border-radius: 50%; 
+        }
+    
+        .nav-center::after {
+            content: "\f065"; 
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+    }
 
   

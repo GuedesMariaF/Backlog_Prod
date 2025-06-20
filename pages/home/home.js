@@ -7,16 +7,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const navCenter = document.querySelector('.nav-center');
     const mainVideo = document.getElementById('mainVideo');
 
-    // Adiciona o listener para o evento 'ended' do vídeo
+ 
     if (mainVideo) {
         mainVideo.addEventListener('ended', function() {
             nextScreen();
         });
         
-        // Opcional: Remove os controles padrão se quiser controles customizados
-        // mainVideo.removeAttribute('controls');
+        
     }
-
+    function startVideo() {
+        if (mainVideo) {
+            
+            const playPromise = mainVideo.play();
+            
+           
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    
+                    mainVideo.controls = true;
+                    console.log('Autoplay bloqueado:', error);
+                });
+            }
+        }
+    }
     function showScreen(index) {
         if (index < 0 || index >= screens.length) return;
         
@@ -28,6 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
         currentScreen = index;
         
         updateButtonStates();
+        
+        
+        const fullscreenBtn = document.querySelector('.fullscreen-button');
+        fullscreenBtn.style.display = index === 0 ? 'flex' : 'none';
     }
 
     function updateButtonStates() {
@@ -68,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function goHome() {
-        window.location.href = "../../../index.html";
+        window.location.href = "../../index.html";
     }
 
     function toggleFullscreen() {

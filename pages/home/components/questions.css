@@ -66,21 +66,14 @@
     width: 100%;
     flex-wrap: wrap;
   }
-  .option.correct {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .option.incorrect {
-    background-color: #f44336;
-    color: white;
-  }
-  
+
   .option {
     cursor: pointer;
     transition: background 0.3s;
   }
-  
+  .answer{
+    color: white;
+  }
   
   .circle-btn {
     width: 50px;
